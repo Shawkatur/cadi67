@@ -166,7 +166,7 @@ export default function Contact() {
                     name="message"
                     rows={4}
                     required
-                    placeholder="Tell us about your project — property type, scope, timeline..."
+                    placeholder="Tell us about your project: property type, scope, timeline..."
                     className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-accent focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
                   />
                 </div>

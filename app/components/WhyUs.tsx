@@ -13,10 +13,10 @@ const stagger = {
 
 const reasons = [
   "Real-time photo verification of all project work",
-  "Transparent pricing — no hidden fees or surprise charges",
+  "Transparent pricing with no hidden fees or surprise charges",
   "Licensed & insured professionals on every job",
   "Single point of contact for all your property needs",
-  "Fast turnaround — residential & commercial",
+  "Fast turnaround for residential & commercial jobs",
 ];
 
 const stats = [
@@ -47,7 +47,7 @@ export default function WhyUs() {
             <motion.p variants={fadeUp} className="text-muted text-lg leading-relaxed mb-8">
               We work directly with homeowners, property managers, and investors
               who need reliable, documented, quality-driven crews. Our team
-              communicates in real time — sending progress photos, repair
+              communicates in real time, sending progress photos, repair
               estimates, and status updates so you&apos;re always in the loop.
             </motion.p>
 

@@ -60,7 +60,7 @@ const sections = [
         confirm you are the owner or authorized user of the number provided. You consent
         to receive recurring automated text messages (SMS, MMS) regarding scheduled
         visits, service updates, offers, and other important notifications. Consent is
-        not required to make any purchase. Message frequency may vary — generally expect
+        not required to make any purchase. Message frequency may vary. Generally expect
         1–5 messages per week.
       </p>
     ),

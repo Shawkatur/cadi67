@@ -84,7 +84,7 @@ export default function Hero() {
               className="text-lg text-muted max-w-lg mb-8 leading-relaxed"
             >
               From full renovations and new construction to painting, flooring, and
-              ongoing maintenance — CADI67 is your single source for professional
+              ongoing maintenance, CADI67 is your single source for professional
               property services in Queens and beyond.
             </motion.p>
 

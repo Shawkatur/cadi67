@@ -94,7 +94,7 @@ export default function Services() {
             Comprehensive Property Services
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
-            A single source for every stage of property care — from routine
+            A single source for every stage of property care, from routine
             maintenance to complete transformation.
           </p>
         </motion.div>

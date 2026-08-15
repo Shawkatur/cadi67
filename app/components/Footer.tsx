@@ -13,7 +13,7 @@ export default function Footer() {
               <Logo variant="horizontal" showTagline={true} className="h-14 w-auto" />
             </a>
             <p className="text-muted text-sm leading-relaxed max-w-md mb-6">
-              Professional property services — renovation, construction,
+              Professional property services: renovation, construction,
               painting, flooring, tree removal, and maintenance. Serving Corona, Queens,
               and the greater NYC metro area.
             </p>
