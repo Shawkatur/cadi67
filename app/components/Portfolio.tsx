@@ -1,12 +1,21 @@
 "use client";
 
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderImage,
-  ReactCompareSliderHandle,
-} from "react-compare-slider";
+
+const ReactCompareSlider = dynamic(
+  () => import("react-compare-slider").then((m) => m.ReactCompareSlider),
+  { ssr: false }
+);
+const ReactCompareSliderImage = dynamic(
+  () => import("react-compare-slider").then((m) => m.ReactCompareSliderImage),
+  { ssr: false }
+);
+const ReactCompareSliderHandle = dynamic(
+  () => import("react-compare-slider").then((m) => m.ReactCompareSliderHandle),
+  { ssr: false }
+);
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

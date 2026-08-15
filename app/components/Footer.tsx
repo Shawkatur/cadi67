@@ -62,7 +62,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact & Legal */}
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-foreground font-[family-name:var(--font-heading)]">
               Contact
@@ -77,6 +77,11 @@ export default function Footer() {
                 5409 108th St, Apt 1A
                 <br />
                 Corona, NY 11368
+              </li>
+              <li className="pt-2 border-t border-border mt-2">
+                <a href="#sms-terms" className="hover:text-primary transition-colors font-medium">
+                  SMS Terms &amp; Conditions
+                </a>
               </li>
             </ul>
           </div>

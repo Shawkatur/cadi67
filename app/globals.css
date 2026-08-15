@@ -91,3 +91,18 @@ html {
 .animate-slide-in-left {
   animation: slideInLeft 0.7s ease-out forwards;
 }
+
+/* SMS Terms accordion content styling */
+.sms-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.sms-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.sms-content p + ul {
+  margin-top: 0.75rem;
+}

@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import WhyUs from "./components/WhyUs";
 import Portfolio from "./components/Portfolio";
 import CTABanner from "./components/CTABanner";
+import SMSTerms from "./components/SMSTerms";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <WhyUs />
       <Portfolio />
       <CTABanner />
+      <SMSTerms />
       <Contact />
       <Footer />
     </>
