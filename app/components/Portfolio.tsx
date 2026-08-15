@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 const ReactCompareSlider = dynamic(
   () => import("react-compare-slider").then((m) => m.ReactCompareSlider),
@@ -17,12 +17,12 @@ const ReactCompareSliderHandle = dynamic(
   { ssr: false }
 );
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } },
 };
 
-const stagger = {
+const stagger: Variants = {
   visible: { transition: { staggerChildren: 0.1 } },
 };
 
