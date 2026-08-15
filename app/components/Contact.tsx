@@ -17,10 +17,10 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Info */}
           <div>
-            <span className="inline-block text-primary text-sm font-semibold tracking-widest uppercase mb-3">
+            <span className="inline-block text-cta text-sm font-semibold tracking-widest uppercase mb-3">
               Get In Touch
             </span>
-            <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-6 font-[family-name:var(--font-heading)] text-foreground">
               Request a Free Estimate
             </h2>
             <p className="text-muted text-lg leading-relaxed mb-10">
@@ -37,7 +37,7 @@ export default function Contact() {
                   </svg>
                 </span>
                 <div>
-                  <div className="font-semibold mb-0.5">Email</div>
+                  <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)]">Email</div>
                   <a href="mailto:support@cadi67.com" className="text-muted hover:text-primary transition-colors">
                     support@cadi67.com
                   </a>
@@ -52,7 +52,7 @@ export default function Contact() {
                   </svg>
                 </span>
                 <div>
-                  <div className="font-semibold mb-0.5">Phone</div>
+                  <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)]">Phone</div>
                   <span className="text-muted">Coming soon</span>
                 </div>
               </div>
@@ -66,7 +66,7 @@ export default function Contact() {
                   </svg>
                 </span>
                 <div>
-                  <div className="font-semibold mb-0.5">Address</div>
+                  <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)]">Address</div>
                   <span className="text-muted">
                     5409 108th St, Apt 1A
                     <br />
@@ -78,26 +78,15 @@ export default function Contact() {
           </div>
 
           {/* Form */}
-          <div className="bg-background border border-border rounded-2xl p-8">
+          <div className="bg-white border border-border rounded-2xl p-8 shadow-sm">
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-primary"
-                  >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Thank You!</h3>
+                <h3 className="text-2xl font-bold mb-2 font-[family-name:var(--font-heading)]">Thank You!</h3>
                 <p className="text-muted">
                   We&apos;ve received your message and will get back to you
                   within one business day.
@@ -107,7 +96,7 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm font-semibold mb-2">
                       Full Name
                     </label>
                     <input
@@ -116,11 +105,11 @@ export default function Contact() {
                       name="name"
                       required
                       placeholder="John Smith"
-                      className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                      className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-accent focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                     />
                   </div>
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm font-semibold mb-2">
                       Email
                     </label>
                     <input
@@ -129,13 +118,13 @@ export default function Contact() {
                       name="email"
                       required
                       placeholder="you@example.com"
-                      className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                      className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-accent focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-2">
+                  <label htmlFor="phone" className="block text-sm font-semibold mb-2">
                     Phone Number
                   </label>
                   <input
@@ -143,19 +132,19 @@ export default function Contact() {
                     id="phone"
                     name="phone"
                     placeholder="(555) 123-4567"
-                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-accent focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="service" className="block text-sm font-medium mb-2">
+                  <label htmlFor="service" className="block text-sm font-semibold mb-2">
                     Service Needed
                   </label>
                   <select
                     id="service"
                     name="service"
                     required
-                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors"
+                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors"
                   >
                     <option value="">Select a service...</option>
                     <option value="renovation">Renovation &amp; Remodeling</option>
@@ -163,13 +152,13 @@ export default function Contact() {
                     <option value="painting">Painting Services</option>
                     <option value="flooring">Flooring Installation</option>
                     <option value="maintenance">Property Maintenance</option>
-                    <option value="exterior">Lawn &amp; Exterior Care</option>
+                    <option value="tree-removal">Tree Removal &amp; Exterior</option>
                     <option value="other">Other</option>
                   </select>
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-sm font-semibold mb-2">
                     Project Details
                   </label>
                   <textarea
@@ -178,20 +167,19 @@ export default function Contact() {
                     rows={4}
                     required
                     placeholder="Tell us about your project — property type, scope, timeline..."
-                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-muted/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-colors resize-none"
+                    className="w-full bg-surface border border-border rounded-lg px-4 py-3 text-foreground placeholder:text-accent focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary-dark text-black font-semibold py-3.5 rounded-lg transition-all duration-200 hover:scale-[1.01] text-base"
+                  className="w-full bg-cta hover:bg-cta-dark text-white font-bold py-3.5 rounded-lg transition-all duration-200 hover:scale-[1.01] text-base shadow-md shadow-cta/20"
                 >
                   Send Request
                 </button>
 
                 <p className="text-xs text-muted text-center">
-                  We&apos;ll never share your info. Response within 1 business
-                  day.
+                  We&apos;ll never share your info. Response within 1 business day.
                 </p>
               </form>
             )}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Logo from "./Logo";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -23,19 +24,14 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/95 backdrop-blur-md border-b border-border shadow-lg"
+          ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
         {/* Logo */}
-        <a href="#top" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-black text-sm tracking-tight group-hover:scale-105 transition-transform">
-            C67
-          </div>
-          <span className="text-xl font-bold tracking-tight">
-            CADI<span className="text-primary">67</span>
-          </span>
+        <a href="#top" className="group hover:opacity-90 transition-opacity">
+          <Logo variant="horizontal" showTagline={false} className="h-11 w-auto" />
         </a>
 
         {/* Desktop Nav */}
@@ -44,7 +40,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-muted hover:text-foreground transition-colors duration-200 tracking-wide"
+                className="text-sm text-muted hover:text-primary transition-colors duration-200 font-medium"
               >
                 {link.label}
               </a>
@@ -55,7 +51,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-black font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02]"
+          className="hidden md:inline-flex items-center gap-2 bg-cta hover:bg-cta-dark text-white font-semibold text-sm px-5 py-2.5 rounded-lg transition-all duration-200 hover:scale-[1.02] shadow-md shadow-cta/20"
         >
           Get a Free Quote
         </a>
@@ -86,7 +82,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-300 bg-surface border-t border-border ${
+        className={`md:hidden overflow-hidden transition-all duration-300 bg-white border-t border-border ${
           menuOpen ? "max-h-80" : "max-h-0"
         }`}
       >
@@ -95,7 +91,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-foreground text-lg py-1"
+              className="text-foreground text-lg py-1 font-medium"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -103,7 +99,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="bg-primary text-black font-semibold text-center py-3 rounded-lg"
+            className="bg-cta text-white font-semibold text-center py-3 rounded-lg"
             onClick={() => setMenuOpen(false)}
           >
             Get a Free Quote

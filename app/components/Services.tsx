@@ -1,3 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+};
+
+const stagger = {
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
 const services = [
   {
     num: "01",
@@ -52,8 +65,8 @@ const services = [
   },
   {
     num: "06",
-    title: "Lawn & Exterior Care",
-    desc: "Grass cutting, landscaping, snow removal, and exterior cleanup. Keep your property looking professional year-round.",
+    title: "Tree Removal & Exterior",
+    desc: "Tree removal, landscaping, cleanup, and exterior maintenance. Keep your property safe and looking its best year-round.",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
@@ -64,40 +77,53 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <span className="inline-block text-primary text-sm font-semibold tracking-widest uppercase mb-3">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="text-center mb-16"
+        >
+          <span className="inline-block text-cta text-sm font-semibold tracking-widest uppercase mb-3">
             What We Do
           </span>
-          <h2 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 font-[family-name:var(--font-heading)] text-foreground">
             Comprehensive Property Services
           </h2>
           <p className="text-muted text-lg max-w-2xl mx-auto">
             A single source for every stage of property care — from routine
             maintenance to complete transformation.
           </p>
-        </div>
+        </motion.div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <motion.div
+          variants={stagger}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {services.map((s) => (
-            <div
+            <motion.div
               key={s.num}
-              className="group relative bg-surface border border-border rounded-2xl p-7 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1"
+              variants={fadeUp}
+              className="group relative bg-surface border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
             >
-              <span className="absolute top-6 right-6 text-5xl font-bold text-border/50 group-hover:text-primary/10 transition-colors">
+              <span className="absolute top-6 right-6 text-5xl font-extrabold text-border/60 group-hover:text-primary/10 transition-colors font-[family-name:var(--font-heading)]">
                 {s.num}
               </span>
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:bg-primary/20 transition-colors">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
                 {s.icon}
               </div>
-              <h3 className="text-lg font-semibold mb-2">{s.title}</h3>
+              <h3 className="text-lg font-bold mb-2 font-[family-name:var(--font-heading)]">{s.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{s.desc}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

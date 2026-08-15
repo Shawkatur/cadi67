@@ -1,23 +1,20 @@
+import Logo from "./Logo";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
+    <footer className="border-t border-border bg-white">
       <div className="max-w-7xl mx-auto px-6 py-16">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#top" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center font-bold text-black text-sm">
-                C67
-              </div>
-              <span className="text-xl font-bold tracking-tight">
-                CADI<span className="text-primary">67</span>
-              </span>
+            <a href="#top" className="inline-block mb-4 hover:opacity-90 transition-opacity">
+              <Logo variant="horizontal" showTagline={true} className="h-14 w-auto" />
             </a>
             <p className="text-muted text-sm leading-relaxed max-w-md mb-6">
               Professional property services — renovation, construction,
-              painting, flooring, and maintenance. Serving Corona, Queens,
+              painting, flooring, tree removal, and maintenance. Serving Corona, Queens,
               and the greater NYC metro area.
             </p>
             <div className="flex gap-3">
@@ -44,7 +41,7 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-muted">
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-foreground font-[family-name:var(--font-heading)]">
               Services
             </h4>
             <ul className="space-y-2.5">
@@ -54,13 +51,10 @@ export default function Footer() {
                 "Painting Services",
                 "Flooring Installation",
                 "Property Maintenance",
-                "Lawn & Exterior Care",
+                "Tree Removal & Exterior",
               ].map((s) => (
                 <li key={s}>
-                  <a
-                    href="#services"
-                    className="text-sm text-muted/80 hover:text-foreground transition-colors"
-                  >
+                  <a href="#services" className="text-sm text-muted hover:text-primary transition-colors">
                     {s}
                   </a>
                 </li>
@@ -70,12 +64,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-sm uppercase tracking-wider mb-4 text-muted">
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-foreground font-[family-name:var(--font-heading)]">
               Contact
             </h4>
-            <ul className="space-y-2.5 text-sm text-muted/80">
+            <ul className="space-y-2.5 text-sm text-muted">
               <li>
-                <a href="mailto:support@cadi67.com" className="hover:text-foreground transition-colors">
+                <a href="mailto:support@cadi67.com" className="hover:text-primary transition-colors">
                   support@cadi67.com
                 </a>
               </li>

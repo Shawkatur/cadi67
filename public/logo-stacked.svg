@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Building icon — centered, mixed residential/commercial -->
+  <g transform="translate(22, 6)" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main residential structure with pitched roof (left portion) -->
+    <path d="M6 58V28L22 14L34 24V58" stroke="#065F46" stroke-width="3.5" fill="none"/>
+    <!-- Roof peak detail -->
+    <path d="M2 31L22 12L38 26" stroke="#065F46" stroke-width="3.5" fill="none"/>
+    <!-- Left window -->
+    <rect x="12" y="33" width="9" height="9" stroke="#065F46" stroke-width="2.5" fill="none"/>
+    <!-- Door -->
+    <rect x="24" y="43" width="7" height="15" stroke="#065F46" stroke-width="2.5" fill="none"/>
+    <!-- Commercial extension — RIGHT PILLAR/WALL in Safety Orange -->
+    <path d="M34 58V20H52V58" stroke="#F97316" stroke-width="3.5" fill="none"/>
+    <!-- Commercial windows -->
+    <rect x="38" y="26" width="9" height="7" stroke="#F97316" stroke-width="2.5" fill="none"/>
+    <rect x="38" y="38" width="9" height="7" stroke="#F97316" stroke-width="2.5" fill="none"/>
+    <!-- Ground line -->
+    <line x1="2" y1="58" x2="56" y2="58" stroke="#065F46" stroke-width="3"/>
+  </g>
+
+  <!-- Text: CADI67 centered below icon -->
+  <text x="60" y="88" text-anchor="middle" font-family="'Montserrat', system-ui, -apple-system, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5">
+    <tspan fill="#065F46">CADI</tspan><tspan fill="#F97316">67</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="60" y="102" text-anchor="middle" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="500" font-size="6.5" letter-spacing="2" fill="#64748B">
+    BUILD · TRANSFORM · MAINTAIN
+  </text>
+</svg>
