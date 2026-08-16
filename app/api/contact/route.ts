@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 const TO_ADDRESS = "support@cadi67.com";
+// Must be on a domain verified in Resend (see RESEND_FROM_EMAIL env var).
+const DEFAULT_FROM = "CADI67 Website <noreply@cadi67.com>";
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -41,25 +43,17 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Please provide a valid email address." }, { status: 400 });
   }
 
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_SECURE } = process.env;
+  const { RESEND_API_KEY, RESEND_FROM_EMAIL } = process.env;
 
-  if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-    console.error("Missing SMTP configuration environment variables.");
+  if (!RESEND_API_KEY) {
+    console.error("Missing RESEND_API_KEY environment variable.");
     return NextResponse.json(
       { error: "Email service is not configured. Please try again later." },
       { status: 500 }
     );
   }
 
-  const transporter = nodemailer.createTransport({
-    host: SMTP_HOST,
-    port: Number(SMTP_PORT),
-    secure: SMTP_SECURE ? SMTP_SECURE === "true" : Number(SMTP_PORT) === 465,
-    auth: {
-      user: SMTP_USER,
-      pass: SMTP_PASS,
-    },
-  });
+  const resend = new Resend(RESEND_API_KEY);
 
   const textBody = [
     `New estimate request from cadi67.com`,
@@ -84,14 +78,22 @@ export async function POST(request: Request) {
   `;
 
   try {
-    await transporter.sendMail({
-      from: `"CADI67 Website" <${SMTP_USER}>`,
+    const { error } = await resend.emails.send({
+      from: RESEND_FROM_EMAIL || DEFAULT_FROM,
       to: TO_ADDRESS,
       replyTo: email,
       subject: `New Estimate Request from ${name}`,
       text: textBody,
       html: htmlBody,
     });
+
+    if (error) {
+      console.error("Resend API error:", error);
+      return NextResponse.json(
+        { error: "Failed to send your message. Please try again later." },
+        { status: 502 }
+      );
+    }
   } catch (err) {
     console.error("Failed to send contact form email:", err);
     return NextResponse.json(
