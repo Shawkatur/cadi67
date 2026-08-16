@@ -56,7 +56,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {/* CTA — always visible, even on mobile */}
           <a
             href="#contact"

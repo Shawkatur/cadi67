@@ -120,7 +120,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={4}
-              className="flex flex-wrap gap-2 sm:gap-3"
+              className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3"
             >
               {trustBadges.map((badge) => (
                 <span
@@ -162,34 +162,34 @@ export default function Hero() {
                 <div className="text-xs text-muted">Metro Area</div>
               </motion.div>
 
-              {/* 2-col photo grid on all screens */}
-              <div className="grid grid-cols-2 gap-2 sm:gap-3">
-                {/* Left column: before photos */}
-                <div className="space-y-2 sm:space-y-3">
-                  <div className="group relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/tree-before-1.jpeg" alt="Tree removal, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+              {/* Single col on mobile (full-width impact), 2-col staggered on md+ */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Mobile: flat vertical pairs. Desktop: left column */}
+                <div className="space-y-3">
+                  <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+                    <Image src="/images/projects/tree-before-1.jpeg" alt="Tree removal, before" fill sizes="(max-width: 768px) 90vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
                       Before
                     </div>
                   </div>
                   <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/cabinet-before-1.jpeg" alt="Cabinet work, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
-                      Before
-                    </div>
-                  </div>
-                </div>
-                {/* Right column: after photos */}
-                <div className="space-y-2 sm:space-y-3 pt-6 sm:pt-8">
-                  <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/tree-after-1.jpeg" alt="Tree removal, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src="/images/projects/tree-after-1.jpeg" alt="Tree removal, after" fill sizes="(max-width: 768px) 90vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-primary/90 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
                       After ✓
                     </div>
                   </div>
-                  <div className="group relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/cabinet-after-1.jpeg" alt="Cabinet work, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-primary/90 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
+                </div>
+                {/* Desktop only: right column with stagger offset */}
+                <div className="hidden md:block space-y-3 pt-8">
+                  <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                    <Image src="/images/projects/cabinet-before-1.jpeg" alt="Cabinet work, before" fill sizes="25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute bottom-3 left-3 bg-gray-800/80 text-white text-xs font-semibold px-2.5 py-1 rounded shadow-sm">
+                      Before
+                    </div>
+                  </div>
+                  <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                    <Image src="/images/projects/cabinet-after-1.jpeg" alt="Cabinet work, after" fill sizes="25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute bottom-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded shadow-sm">
                       After ✓
                     </div>
                   </div>

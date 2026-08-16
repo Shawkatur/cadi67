@@ -131,7 +131,7 @@ export default function Portfolio() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"
         >
           {galleryImages.map((img) => (
             <motion.div
@@ -143,7 +143,7 @@ export default function Portfolio() {
                 src={img.src}
                 alt={img.alt}
                 fill
-                sizes="(max-width: 768px) 45vw, 25vw"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 25vw"
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
