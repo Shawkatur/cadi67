@@ -33,12 +33,18 @@ export const metadata: Metadata = {
     "NYC contractor",
   ],
   openGraph: {
-    title: "CADI67 — Professional Property Services",
+    title: "CADI67 - Professional Property Services",
     description:
       "Expert renovation, construction, painting, and maintenance. Serving Corona, NY and surrounding areas.",
     url: "https://cadi67.com",
     siteName: "CADI67",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CADI67 - Professional Property Services",
+    description:
+      "Expert renovation, construction, painting, and maintenance. Serving Corona, NY and surrounding areas.",
   },
 };
 
