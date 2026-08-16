@@ -16,7 +16,7 @@ const trustBadges = [
   {
     label: "Licensed & Insured",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-primary flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-emerald-800 flex-shrink-0">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     ),
@@ -24,7 +24,7 @@ const trustBadges = [
   {
     label: "Photo-Verified Work",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-primary flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-emerald-800 flex-shrink-0">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
       </svg>
@@ -33,7 +33,7 @@ const trustBadges = [
   {
     label: "Free Estimates",
     icon: (
-      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-primary flex-shrink-0">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="text-emerald-800 flex-shrink-0">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
       </svg>
     ),
@@ -114,7 +114,7 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Trust pills */}
+            {/* Trust pills — darker icons for better contrast */}
             <motion.div
               variants={fadeUp}
               initial="hidden"
@@ -125,7 +125,7 @@ export default function Hero() {
               {trustBadges.map((badge) => (
                 <span
                   key={badge.label}
-                  className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-foreground/70 bg-white border border-border px-3 py-2 rounded-full shadow-sm min-h-0 min-w-0"
+                  className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-foreground/80 bg-white border border-border px-3 py-2 rounded-full shadow-sm min-h-0 min-w-0"
                 >
                   {badge.icon}
                   {badge.label}
@@ -164,17 +164,22 @@ export default function Hero() {
 
               {/* 2-col photo grid on all screens */}
               <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                {/* Left column: before photos */}
                 <div className="space-y-2 sm:space-y-3">
                   <div className="group relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
                     <Image src="/images/projects/tree-before-1.jpeg" alt="Tree removal, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-white/90 text-foreground text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
+                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
                       Before
                     </div>
                   </div>
                   <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
                     <Image src="/images/projects/cabinet-before-1.jpeg" alt="Cabinet work, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
+                      Before
+                    </div>
                   </div>
                 </div>
+                {/* Right column: after photos */}
                 <div className="space-y-2 sm:space-y-3 pt-6 sm:pt-8">
                   <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
                     <Image src="/images/projects/tree-after-1.jpeg" alt="Tree removal, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
@@ -185,7 +190,7 @@ export default function Hero() {
                   <div className="group relative aspect-[3/4] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
                     <Image src="/images/projects/cabinet-after-1.jpeg" alt="Cabinet work, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-primary/90 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
-                      Complete ✓
+                      After ✓
                     </div>
                   </div>
                 </div>

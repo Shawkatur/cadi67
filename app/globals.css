@@ -80,6 +80,13 @@ p a, li a, span a {
   100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
+/* Suppress any floating position labels from third-party sliders */
+[data-rcs] [data-rcs-label],
+[data-rcs]::before,
+[data-rcs]::after {
+  display: none !important;
+}
+
 /* SMS Terms accordion content styling */
 .sms-content ul {
   list-style: disc;
