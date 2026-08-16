@@ -5,14 +5,14 @@ export default function Footer() {
 
   return (
     <footer className="border-t border-border bg-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <a href="#top" className="inline-block mb-4 hover:opacity-90 transition-opacity">
-              <Logo variant="horizontal" showTagline={true} className="h-14 w-auto" />
+          <div className="sm:col-span-2 lg:col-span-2">
+            <a href="#top" className="inline-block mb-3 sm:mb-4 hover:opacity-90 transition-opacity">
+              <Logo variant="horizontal" showTagline={true} className="h-12 sm:h-14 w-auto" />
             </a>
-            <p className="text-muted text-sm leading-relaxed max-w-md mb-6">
+            <p className="text-muted text-sm leading-relaxed max-w-md mb-5 sm:mb-6">
               Professional property services: renovation, construction,
               painting, flooring, tree removal, and maintenance. Serving Corona, Queens,
               and the greater NYC metro area.
@@ -20,7 +20,7 @@ export default function Footer() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-9 h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
+                className="w-10 h-10 sm:w-9 sm:h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
                 aria-label="Facebook"
               >
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -29,7 +29,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-9 h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
+                className="w-10 h-10 sm:w-9 sm:h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
                 aria-label="Instagram"
               >
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -39,12 +39,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Services Links */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-foreground font-[family-name:var(--font-heading)]">
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-3 sm:mb-4 text-foreground font-[family-name:var(--font-heading)]">
               Services
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2">
               {[
                 "Renovation & Remodeling",
                 "Construction & Builds",
@@ -54,7 +54,7 @@ export default function Footer() {
                 "Tree Removal & Exterior",
               ].map((s) => (
                 <li key={s}>
-                  <a href="#services" className="text-sm text-muted hover:text-primary transition-colors">
+                  <a href="#services" className="text-sm text-muted hover:text-primary transition-colors py-1 inline-block">
                     {s}
                   </a>
                 </li>
@@ -64,12 +64,12 @@ export default function Footer() {
 
           {/* Contact & Legal */}
           <div>
-            <h4 className="font-bold text-sm uppercase tracking-wider mb-4 text-foreground font-[family-name:var(--font-heading)]">
+            <h4 className="font-bold text-sm uppercase tracking-wider mb-3 sm:mb-4 text-foreground font-[family-name:var(--font-heading)]">
               Contact
             </h4>
-            <ul className="space-y-2.5 text-sm text-muted">
+            <ul className="space-y-2 text-sm text-muted">
               <li>
-                <a href="mailto:support@cadi67.com" className="hover:text-primary transition-colors">
+                <a href="mailto:support@cadi67.com" className="hover:text-primary transition-colors py-1 inline-block">
                   support@cadi67.com
                 </a>
               </li>
@@ -79,7 +79,7 @@ export default function Footer() {
                 Corona, NY 11368
               </li>
               <li className="pt-2 border-t border-border mt-2">
-                <a href="#sms-terms" className="hover:text-primary transition-colors font-medium">
+                <a href="#sms-terms" className="hover:text-primary transition-colors font-medium py-1 inline-block">
                   SMS Terms &amp; Conditions
                 </a>
               </li>
@@ -88,9 +88,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom */}
+      {/* Bottom bar */}
       <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
           <span>&copy; {year} CADI67. All rights reserved.</span>
           <span>Serving Corona, Queens &amp; NYC Metro Area</span>
         </div>

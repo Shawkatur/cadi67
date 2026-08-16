@@ -55,7 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased overflow-x-hidden">
+        <main className="overflow-x-hidden">{children}</main>
+      </body>
     </html>
   );
 }

@@ -54,10 +54,10 @@ const trustItems = [
 export default function TrustBar() {
   return (
     <div className="bg-primary overflow-hidden">
-      <div className="flex animate-[scroll_30s_linear_infinite] w-max">
+      <div className="flex animate-[scroll_25s_linear_infinite] w-max">
         {[...trustItems, ...trustItems].map((item, i) => (
-          <div key={i} className="flex items-center gap-6 px-6 py-3.5 whitespace-nowrap">
-            <div className="flex items-center gap-2 text-sm text-white/90 font-medium">
+          <div key={i} className="flex items-center gap-4 sm:gap-6 px-4 sm:px-6 py-3 sm:py-3.5 whitespace-nowrap">
+            <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-white/90 font-medium">
               <span className="text-white/70">{item.icon}</span>
               {item.text}
             </div>

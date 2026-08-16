@@ -24,7 +24,7 @@ const sections = [
             vendors who assist in the delivery of text messages.
           </li>
           <li>
-            <strong>Additional Disclosures – Affiliates:</strong> We may disclose
+            <strong>Additional Disclosures, Affiliates:</strong> We may disclose
             Personal Data to our affiliates or subsidiaries; their use and disclosure will
             be subject to this Policy.
           </li>
@@ -61,7 +61,7 @@ const sections = [
         to receive recurring automated text messages (SMS, MMS) regarding scheduled
         visits, service updates, offers, and other important notifications. Consent is
         not required to make any purchase. Message frequency may vary. Generally expect
-        1–5 messages per week.
+        1 to 5 messages per week.
       </p>
     ),
   },
@@ -222,20 +222,20 @@ const sections = [
 
 export default function SMSTerms() {
   return (
-    <section id="sms-terms" className="py-24 bg-surface">
-      <div className="max-w-4xl mx-auto px-6">
+    <section id="sms-terms" className="py-16 sm:py-24 bg-surface">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-12"
+          viewport={{ once: true, margin: "-60px" }}
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="inline-block text-cta text-sm font-semibold tracking-widest uppercase mb-3">
+          <span className="inline-block text-cta text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2 sm:mb-3">
             Legal
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 font-[family-name:var(--font-heading)] text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4 font-[family-name:var(--font-heading)] text-foreground">
             SMS Terms &amp; Conditions
           </h2>
         </motion.div>
@@ -245,21 +245,21 @@ export default function SMSTerms() {
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="space-y-3"
+          viewport={{ once: true, margin: "-60px" }}
+          className="space-y-2 sm:space-y-3"
         >
           {sections.map((section) => (
             <details
               key={section.id}
-              className="group bg-white border border-border rounded-xl overflow-hidden hover:border-primary/20 transition-colors"
+              className="group bg-white border border-border rounded-lg sm:rounded-xl overflow-hidden hover:border-primary/20 transition-colors"
               open={section.defaultOpen}
             >
-              <summary className="flex items-center gap-3 px-6 py-4 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden">
+              <summary className="flex items-center gap-2.5 sm:gap-3 px-4 sm:px-6 py-3.5 sm:py-4 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden min-h-[48px]">
                 {/* Chevron */}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
+                  width="16"
+                  height="16"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -270,11 +270,11 @@ export default function SMSTerms() {
                 >
                   <path d="M9 18l6-6-6-6" />
                 </svg>
-                <span className="font-bold text-foreground font-[family-name:var(--font-heading)]">
+                <span className="font-bold text-sm sm:text-base text-foreground font-[family-name:var(--font-heading)]">
                   {section.id}. {section.title}
                 </span>
               </summary>
-              <div className="px-6 pb-5 pt-1 text-muted text-sm leading-relaxed sms-content">
+              <div className="px-4 sm:px-6 pb-4 sm:pb-5 pt-1 text-muted text-sm leading-relaxed sms-content">
                 {section.content}
               </div>
             </details>

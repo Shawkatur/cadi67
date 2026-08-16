@@ -77,49 +77,49 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="services" className="py-16 sm:py-24 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-16"
+          viewport={{ once: true, margin: "-60px" }}
+          className="text-center mb-10 sm:mb-16"
         >
-          <span className="inline-block text-cta text-sm font-semibold tracking-widest uppercase mb-3">
+          <span className="inline-block text-cta text-xs sm:text-sm font-semibold tracking-widest uppercase mb-2 sm:mb-3">
             What We Do
           </span>
-          <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4 font-[family-name:var(--font-heading)] text-foreground">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3 sm:mb-4 font-[family-name:var(--font-heading)] text-foreground">
             Comprehensive Property Services
           </h2>
-          <p className="text-muted text-lg max-w-2xl mx-auto">
+          <p className="text-muted text-base sm:text-lg max-w-2xl mx-auto">
             A single source for every stage of property care, from routine
             maintenance to complete transformation.
           </p>
         </motion.div>
 
-        {/* Grid */}
+        {/* Grid — 1 col mobile, 2 col tablet, 3 col desktop */}
         <motion.div
           variants={stagger}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
         >
           {services.map((s) => (
             <motion.div
               key={s.num}
               variants={fadeUp}
-              className="group relative bg-surface border border-border rounded-2xl p-7 hover:border-primary/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              className="group relative bg-surface border border-border rounded-xl sm:rounded-2xl p-5 sm:p-7 hover:border-primary/30 hover:shadow-lg transition-all duration-300 active:scale-[0.98] sm:hover:-translate-y-1"
             >
-              <span className="absolute top-6 right-6 text-5xl font-extrabold text-border/60 group-hover:text-primary/10 transition-colors font-[family-name:var(--font-heading)]">
+              <span className="absolute top-4 right-4 sm:top-6 sm:right-6 text-4xl sm:text-5xl font-extrabold text-border/60 group-hover:text-primary/10 transition-colors font-[family-name:var(--font-heading)]">
                 {s.num}
               </span>
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
+              <div className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-4 sm:mb-5 group-hover:bg-primary group-hover:text-white transition-colors">
                 {s.icon}
               </div>
-              <h3 className="text-lg font-bold mb-2 font-[family-name:var(--font-heading)]">{s.title}</h3>
+              <h3 className="text-base sm:text-lg font-bold mb-1.5 sm:mb-2 font-[family-name:var(--font-heading)]">{s.title}</h3>
               <p className="text-muted text-sm leading-relaxed">{s.desc}</p>
             </motion.div>
           ))}
