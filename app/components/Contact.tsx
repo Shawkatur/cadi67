@@ -4,10 +4,42 @@ import { useState, type FormEvent } from "react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setError(null);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      name: data.get("name"),
+      email: data.get("email"),
+      phone: data.get("phone"),
+      service: data.get("service"),
+      message: data.get("message"),
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -171,11 +203,18 @@ export default function Contact() {
                   />
                 </div>
 
+                {error && (
+                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                    {error}
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full bg-cta hover:bg-cta-dark text-white font-bold py-4 rounded-lg transition-all duration-200 active:scale-[0.98] text-base shadow-md shadow-cta/20 min-h-[52px]"
+                  disabled={submitting}
+                  className="w-full bg-cta hover:bg-cta-dark text-white font-bold py-4 rounded-lg transition-all duration-200 active:scale-[0.98] text-base shadow-md shadow-cta/20 min-h-[52px] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  Send Request
+                  {submitting ? "Sending..." : "Send Request"}
                 </button>
 
                 <p className="text-xs text-muted text-center">
