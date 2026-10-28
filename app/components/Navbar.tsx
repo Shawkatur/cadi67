@@ -7,7 +7,7 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#why-us", label: "Why Us" },
   { href: "#portfolio", label: "Portfolio" },
-  { href: "#sms-terms", label: "SMS Terms" },
+  { href: "#service-areas", label: "Coverage" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -68,24 +68,24 @@ export default function Navbar() {
 
           {/* Hamburger — mobile only */}
           <button
-            className="md:hidden flex flex-col justify-center items-center gap-1.5 p-2 min-h-[44px] min-w-[44px]"
+            className="md:hidden relative p-2 min-h-[44px] min-w-[44px]"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
             aria-expanded={menuOpen}
           >
             <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${
-                menuOpen ? "rotate-45 translate-y-2" : ""
+              className={`block absolute left-1/2 top-1/2 w-5 h-0.5 bg-foreground transition-all duration-300 -translate-x-1/2 ${
+                menuOpen ? "rotate-45 translate-y-0" : "-translate-y-[6px]"
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${
-                menuOpen ? "opacity-0" : ""
+              className={`block absolute left-1/2 top-1/2 w-5 h-0.5 bg-foreground transition-all duration-300 -translate-x-1/2 -translate-y-[1px] ${
+                menuOpen ? "opacity-0 scale-0" : ""
               }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-foreground transition-all duration-300 ${
-                menuOpen ? "-rotate-45 -translate-y-2" : ""
+              className={`block absolute left-1/2 top-1/2 w-5 h-0.5 bg-foreground transition-all duration-300 -translate-x-1/2 ${
+                menuOpen ? "-rotate-45 translate-y-0" : "translate-y-[5px]"
               }`}
             />
           </button>
@@ -94,8 +94,8 @@ export default function Navbar() {
 
       {/* Mobile Menu — fullscreen overlay */}
       <div
-        className={`md:hidden fixed inset-x-0 top-16 bottom-0 bg-white transition-all duration-300 ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-white transition-all duration-300 overflow-y-auto ${
+          menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
         }`}
       >
         <div className="px-6 py-6 flex flex-col gap-2">

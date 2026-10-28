@@ -95,7 +95,7 @@ export default function Hero() {
               initial="hidden"
               animate="visible"
               custom={3}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-10"
+              className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 mb-8 sm:mb-10"
             >
               <a
                 href="#contact"
@@ -111,6 +111,16 @@ export default function Hero() {
                 className="inline-flex items-center justify-center gap-2 border-2 border-primary/40 hover:border-primary hover:bg-primary/5 text-primary font-bold px-6 sm:px-7 py-3.5 rounded-lg text-base transition-all duration-200 min-h-[48px]"
               >
                 Our Services
+              </a>
+              <a
+                href="#service-areas"
+                className="inline-flex items-center justify-center gap-2 border-2 border-primary/40 hover:border-primary hover:bg-primary/5 text-primary font-bold px-6 sm:px-7 py-3.5 rounded-lg text-base transition-all duration-200 min-h-[48px]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+                Service Areas
               </a>
             </motion.div>
 
