@@ -8,6 +8,7 @@ const navLinks = [
   { href: "#why-us", label: "Why Us" },
   { href: "#portfolio", label: "Portfolio" },
   { href: "#service-areas", label: "Coverage" },
+  { href: "#sms-terms", label: "SMS Terms" },
   { href: "#contact", label: "Contact" },
 ];
 
