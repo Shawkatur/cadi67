@@ -14,12 +14,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://cadi67.com"),
   icons: {
     icon: "/favicon.svg",
   },
-  title: "CADI67 — Professional Property Services · Corona, NY",
+  title: "CADI67 — Professional Property Services · Nationwide",
   description:
-    "CADI67 delivers expert renovation, remodeling, construction, painting, flooring, and property maintenance across Corona, Queens, and the greater NYC area.",
+    "CADI67 delivers expert renovation, remodeling, construction, painting, flooring, and property maintenance across 12 states including New York, California, Florida, and more.",
   keywords: [
     "property services",
     "renovation",
@@ -28,14 +29,14 @@ export const metadata: Metadata = {
     "painting",
     "flooring",
     "property maintenance",
+    "nationwide contractor",
     "Corona NY",
-    "Queens NY",
     "NYC contractor",
   ],
   openGraph: {
     title: "CADI67 - Professional Property Services",
     description:
-      "Expert renovation, construction, painting, and maintenance. Serving Corona, NY and surrounding areas.",
+      "Expert renovation, construction, painting, and maintenance. Serving 12 states nationwide.",
     url: "https://cadi67.com",
     siteName: "CADI67",
     type: "website",
@@ -44,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CADI67 - Professional Property Services",
     description:
-      "Expert renovation, construction, painting, and maintenance. Serving Corona, NY and surrounding areas.",
+      "Expert renovation, construction, painting, and maintenance. Serving 12 states nationwide.",
   },
 };
 

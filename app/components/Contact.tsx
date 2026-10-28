@@ -60,21 +60,6 @@ export default function Contact() {
             </p>
 
             <div className="space-y-5 sm:space-y-6">
-              {/* Email */}
-              <div className="flex items-start gap-3 sm:gap-4">
-                <span className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                  </svg>
-                </span>
-                <div>
-                  <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)] text-sm sm:text-base">Email</div>
-                  <a href="mailto:support@cadi67.com" className="text-muted hover:text-primary transition-colors text-sm sm:text-base py-1 inline-block">
-                    support@cadi67.com
-                  </a>
-                </div>
-              </div>
-
               {/* Phone */}
               <div className="flex items-start gap-3 sm:gap-4">
                 <span className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
@@ -84,7 +69,24 @@ export default function Contact() {
                 </span>
                 <div>
                   <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)] text-sm sm:text-base">Phone</div>
-                  <span className="text-muted text-sm sm:text-base">Coming soon</span>
+                  <a href="tel:+19294565089" className="text-muted hover:text-primary transition-colors text-sm sm:text-base py-1 inline-block">
+                    (929) 456-5089
+                  </a>
+                </div>
+              </div>
+
+              {/* Email */}
+              <div className="flex items-start gap-3 sm:gap-4">
+                <span className="w-11 h-11 sm:w-12 sm:h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.75" stroke="currentColor" className="w-5 h-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </span>
+                <div>
+                  <div className="font-bold mb-0.5 font-[family-name:var(--font-heading)] text-sm sm:text-base">Email</div>
+                  <a href="mailto:support@cadi67.com" className="text-muted hover:text-primary transition-colors text-sm sm:text-base py-1 inline-block break-all sm:break-normal">
+                    support@cadi67.com
+                  </a>
                 </div>
               </div>
 

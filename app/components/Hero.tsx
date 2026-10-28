@@ -60,7 +60,7 @@ export default function Hero() {
               className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 text-primary text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full mb-4 sm:mb-6"
             >
               <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-              Serving Corona, NY &amp; Surrounding Areas
+              Serving 12 States Nationwide
             </motion.span>
 
             <motion.h1
@@ -142,7 +142,7 @@ export default function Hero() {
             className="relative mt-4 lg:mt-0"
           >
             <div className="relative">
-              {/* Stat chips — hidden on mobile to save space */}
+              {/* Stat chips — hidden on small mobile, visible on sm+ */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -158,39 +158,39 @@ export default function Hero() {
                 transition={{ duration: 0.5, delay: 0.9 }}
                 className="hidden sm:block absolute -bottom-4 -right-4 z-20 bg-white border border-border rounded-xl px-4 py-3 shadow-lg"
               >
-                <div className="text-2xl font-bold text-cta font-[family-name:var(--font-heading)]">NYC</div>
-                <div className="text-xs text-muted">Metro Area</div>
+                <div className="text-2xl font-bold text-cta font-[family-name:var(--font-heading)]">12</div>
+                <div className="text-xs text-muted">States Served</div>
               </motion.div>
 
-              {/* Single col on mobile (full-width impact), 2-col staggered on md+ */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                {/* Mobile: flat vertical pairs. Desktop: left column */}
-                <div className="space-y-3">
+              {/* 2-col side-by-side on mobile, staggered 2-col on md+ */}
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                {/* Left column: before/after pair */}
+                <div className="space-y-2 sm:space-y-3">
                   <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/tree-before-1.jpeg" alt="Tree removal, before" fill sizes="(max-width: 768px) 90vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src="/images/projects/tree-before-1.jpeg" alt="Tree removal, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
                       Before
                     </div>
                   </div>
                   <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/tree-after-1.jpeg" alt="Tree removal, after" fill sizes="(max-width: 768px) 90vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <Image src="/images/projects/tree-after-1.jpeg" alt="Tree removal, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
                     <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-primary/90 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
-                      After ✓
+                      After
                     </div>
                   </div>
                 </div>
-                {/* Desktop only: right column with stagger offset */}
-                <div className="hidden md:block space-y-3 pt-8">
-                  <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/cabinet-before-1.jpeg" alt="Cabinet work, before" fill sizes="25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute bottom-3 left-3 bg-gray-800/80 text-white text-xs font-semibold px-2.5 py-1 rounded shadow-sm">
+                {/* Right column with stagger offset */}
+                <div className="space-y-2 sm:space-y-3 sm:pt-8">
+                  <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+                    <Image src="/images/projects/cabinet-before-1.jpeg" alt="Cabinet work, before" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-gray-800/80 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
                       Before
                     </div>
                   </div>
-                  <div className="group relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-                    <Image src="/images/projects/cabinet-after-1.jpeg" alt="Cabinet work, after" fill sizes="25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                    <div className="absolute bottom-3 left-3 bg-primary/90 text-white text-xs font-semibold px-2.5 py-1 rounded shadow-sm">
-                      After ✓
+                  <div className="group relative aspect-[4/3] rounded-xl sm:rounded-2xl overflow-hidden shadow-lg">
+                    <Image src="/images/projects/cabinet-after-1.jpeg" alt="Cabinet work, after" fill sizes="(max-width: 768px) 45vw, 25vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3 bg-primary/90 text-white text-[10px] sm:text-xs font-semibold px-2 py-0.5 sm:px-2.5 sm:py-1 rounded shadow-sm">
+                      After
                     </div>
                   </div>
                 </div>

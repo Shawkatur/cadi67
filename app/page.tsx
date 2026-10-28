@@ -4,6 +4,7 @@ import TrustBar from "./components/TrustBar";
 import Services from "./components/Services";
 import WhyUs from "./components/WhyUs";
 import Portfolio from "./components/Portfolio";
+import ServiceAreas from "./components/ServiceAreas";
 import CTABanner from "./components/CTABanner";
 import SMSTerms from "./components/SMSTerms";
 import Contact from "./components/Contact";
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <WhyUs />
       <Portfolio />
+      <ServiceAreas />
       <CTABanner />
       <SMSTerms />
       <Contact />

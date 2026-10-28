@@ -14,13 +14,13 @@ export default function Footer() {
             </a>
             <p className="text-muted text-sm leading-relaxed max-w-md mb-5 sm:mb-6">
               Professional property services: renovation, construction,
-              painting, flooring, tree removal, and maintenance. Serving Corona, Queens,
-              and the greater NYC metro area.
+              painting, flooring, tree removal, and maintenance. Serving 12 states
+              nationwide from our home base in Corona, NY.
             </p>
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 sm:w-9 sm:h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
+                className="w-11 h-11 sm:w-10 sm:h-10 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
                 aria-label="Facebook"
               >
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -29,7 +29,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-10 h-10 sm:w-9 sm:h-9 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
+                className="w-11 h-11 sm:w-10 sm:h-10 bg-surface border border-border rounded-lg flex items-center justify-center text-muted hover:text-primary hover:border-primary/30 transition-colors"
                 aria-label="Instagram"
               >
                 <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
@@ -69,6 +69,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-muted">
               <li>
+                <a href="tel:+19294565089" className="hover:text-primary transition-colors py-1 inline-block">
+                  (929) 456-5089
+                </a>
+              </li>
+              <li>
                 <a href="mailto:support@cadi67.com" className="hover:text-primary transition-colors py-1 inline-block">
                   support@cadi67.com
                 </a>
@@ -92,7 +97,7 @@ export default function Footer() {
       <div className="border-t border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 sm:py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted">
           <span>&copy; {year} CADI67. All rights reserved.</span>
-          <span>Serving Corona, Queens &amp; NYC Metro Area</span>
+          <span>Serving 12 states nationwide</span>
         </div>
       </div>
     </footer>
