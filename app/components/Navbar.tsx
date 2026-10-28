@@ -93,44 +93,42 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu — fullscreen overlay */}
-      <div
-        className={`md:hidden fixed inset-x-0 top-16 bottom-0 z-50 bg-white transition-all duration-300 overflow-y-auto ${
-          menuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-        }`}
-      >
-        <div className="px-6 py-6 flex flex-col gap-2">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-foreground text-lg font-medium py-3 px-2 rounded-lg hover:bg-surface transition-colors min-h-[48px] flex items-center"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-          <div className="mt-4 flex flex-col gap-3">
-            <a
-              href="tel:+19294565089"
-              className="flex items-center justify-center gap-2 border-2 border-primary/30 text-primary font-semibold py-4 rounded-lg text-lg min-h-[52px]"
-              onClick={() => setMenuOpen(false)}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-              </svg>
-              (929) 456-5089
-            </a>
-            <a
-              href="#contact"
-              className="bg-cta text-white font-semibold text-center py-4 rounded-lg text-lg min-h-[52px] flex items-center justify-center"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get a Free Quote
-            </a>
+      {/* Mobile Menu — flows inside fixed header */}
+      {menuOpen && (
+        <div className="md:hidden bg-white border-t border-border h-[calc(100dvh-4rem)] overflow-y-auto">
+          <div className="px-6 py-6 flex flex-col gap-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-foreground text-lg font-medium py-3 px-2 rounded-lg hover:bg-surface transition-colors min-h-[48px] flex items-center"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div className="mt-4 flex flex-col gap-3">
+              <a
+                href="tel:+19294565089"
+                className="flex items-center justify-center gap-2 border-2 border-primary/30 text-primary font-semibold py-4 rounded-lg text-lg min-h-[52px]"
+                onClick={() => setMenuOpen(false)}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-5 h-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                (929) 456-5089
+              </a>
+              <a
+                href="#contact"
+                className="bg-cta text-white font-semibold text-center py-4 rounded-lg text-lg min-h-[52px] flex items-center justify-center"
+                onClick={() => setMenuOpen(false)}
+              >
+                Get a Free Quote
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
